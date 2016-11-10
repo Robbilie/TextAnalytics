@@ -43,7 +43,9 @@ public class EvaluatorExample
 
         System.out.println(actual.getLanguage() + " detected as " + detected.getLanguage());
         
-        // FIXME: Keep track of correctly classified documents! 
+        // FIXME: Keep track of correctly classified documents!
+        this.nrOfDocuments++;
+        this.correct += actual.getLanguage().equals(detected.getLanguage()) ? 1 : 0;
     }
 
 

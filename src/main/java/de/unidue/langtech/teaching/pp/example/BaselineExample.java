@@ -1,6 +1,7 @@
 package de.unidue.langtech.teaching.pp.example;
 
-import java.util.Collection;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
@@ -29,8 +30,23 @@ public class BaselineExample
         Collection<Token> tokens = JCasUtil.select(jcas, Token.class);
         System.out.println("CAS contains " + tokens.size() + " tokens.");
         
-        DetectedLanguage languageAnno = new DetectedLanguage(jcas);
-        languageAnno.setLanguage("EN");
+        final DetectedLanguage languageAnno = new DetectedLanguage(jcas);
+
+        HashMap<String, List<String>> languages = new HashMap<>();
+
+        languages.put("DE", Arrays.asList(" der ", " die ", " das ", "Das ", "Der ", "Die "));
+        languages.put("FR", Arrays.asList(" le ", " la ", " je ", " tu ", " il ", " elle "));
+        languages.put("EN", Arrays.asList(" the ", " he ", " she ", " it "));
+
+        languages.forEach((k, v) -> {
+            List<String> found = v
+                .stream()
+                .filter(i -> jcas.getDocumentText().indexOf(i) >= 0)
+                .collect(Collectors.toList());
+            if(found.size() > 0)
+                languageAnno.setLanguage(k);
+        });
+
         languageAnno.addToIndexes();
     }
 }
