@@ -22,9 +22,9 @@ public class BasicPipeline
         SimplePipeline.runPipeline(
                 CollectionReaderFactory.createReader(
                         ReaderExample.class,
-                        ReaderExample.PARAM_INPUT_FILE, "src/test/resources/test/input.txt"
+                        ReaderExample.PARAM_INPUT_FILE, "src/test/resources/test/inputNewFormat.txt"
                 ),
-                AnalysisEngineFactory.createEngineDescription(BaselineExample.class),
+                AnalysisEngineFactory.createEngineDescription(BaselineExample.class, BaselineExample.PARAM_MANDATORY_DEFAULT, "WEW LAD"),
                 AnalysisEngineFactory.createEngineDescription(EvaluatorExample.class),
                 //AnalysisEngineFactory.createEngineDescription(BreakIteratorSegmenter.class),
                 //AnalysisEngineFactory.createEngineDescription(SnowballStemmer.class, SnowballStemmer.PARAM_LANGUAGE, "de"),

@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
@@ -21,10 +22,16 @@ public class BaselineExample
     extends JCasAnnotator_ImplBase
 {
 
+    public static final String PARAM_MANDATORY_DEFAULT = "PARAM_MANDATORY_DEFAULT";
+    @ConfigurationParameter(name = PARAM_MANDATORY_DEFAULT, mandatory = true, defaultValue = "fgt")
+    protected String mandatory_default;
+
     @Override
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
     {
+        System.out.println(mandatory_default);
+
         System.out.println("Document is: " + jcas.getDocumentText());
         
         Collection<Token> tokens = JCasUtil.select(jcas, Token.class);
