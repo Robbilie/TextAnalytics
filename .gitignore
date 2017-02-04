@@ -4,6 +4,10 @@
 .project
 .classpath
 
+# IntelliJ #
+############
+.idea
+
 # Compiled source #
 ###################
 *.com
