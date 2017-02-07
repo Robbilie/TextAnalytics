@@ -23,8 +23,8 @@ public class BaselineExample
 {
 
     public static final String PARAM_MANDATORY_DEFAULT = "PARAM_MANDATORY_DEFAULT";
-    @ConfigurationParameter(name = PARAM_MANDATORY_DEFAULT, mandatory = true, defaultValue = "fgt")
-    protected String mandatory_default;
+    @ConfigurationParameter(name = PARAM_MANDATORY_DEFAULT, defaultValue = "fgt")
+    private String mandatory_default;
 
     @Override
     public void process(JCas jcas)
@@ -48,7 +48,7 @@ public class BaselineExample
         languages.forEach((k, v) -> {
             List<String> found = v
                 .stream()
-                .filter(i -> jcas.getDocumentText().indexOf(i) >= 0)
+                .filter(i -> jcas.getDocumentText().contains(i))
                 .collect(Collectors.toList());
             if(found.size() > 0)
                 languageAnno.setLanguage(k);
