@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Thu Mar 16 22:07:23 CET 2017
+ * Updated by JCasGen Thu Mar 16 22:38:57 CET 2017
  * @generated */
 public class GoldScore_Type extends Annotation_Type {
   /** @generated */
@@ -47,26 +47,26 @@ public class GoldScore_Type extends Annotation_Type {
   
  
   /** @generated */
-  final Feature casFeat_score;
+  final Feature casFeat_similarity;
   /** @generated */
-  final int     casFeatCode_score;
+  final int     casFeatCode_similarity;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public float getScore(int addr) {
-        if (featOkTst && casFeat_score == null)
-      jcas.throwFeatMissing("score", "de.unidue.langtech.teaching.pp.type.GoldScore");
-    return ll_cas.ll_getFloatValue(addr, casFeatCode_score);
+  public float getSimilarity(int addr) {
+        if (featOkTst && casFeat_similarity == null)
+      jcas.throwFeatMissing("similarity", "de.unidue.langtech.teaching.pp.type.GoldScore");
+    return ll_cas.ll_getFloatValue(addr, casFeatCode_similarity);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setScore(int addr, float v) {
-        if (featOkTst && casFeat_score == null)
-      jcas.throwFeatMissing("score", "de.unidue.langtech.teaching.pp.type.GoldScore");
-    ll_cas.ll_setFloatValue(addr, casFeatCode_score, v);}
+  public void setSimilarity(int addr, float v) {
+        if (featOkTst && casFeat_similarity == null)
+      jcas.throwFeatMissing("similarity", "de.unidue.langtech.teaching.pp.type.GoldScore");
+    ll_cas.ll_setFloatValue(addr, casFeatCode_similarity, v);}
     
   
 
@@ -86,8 +86,8 @@ public class GoldScore_Type extends Annotation_Type {
     casFeatCode_name  = (null == casFeat_name) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_name).getCode();
 
  
-    casFeat_score = jcas.getRequiredFeatureDE(casType, "score", "uima.cas.Float", featOkTst);
-    casFeatCode_score  = (null == casFeat_score) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_score).getCode();
+    casFeat_similarity = jcas.getRequiredFeatureDE(casType, "similarity", "uima.cas.Float", featOkTst);
+    casFeatCode_similarity  = (null == casFeat_similarity) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_similarity).getCode();
 
   }
 }

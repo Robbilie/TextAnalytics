@@ -33,7 +33,7 @@
         <featureDescription>
           <name>scores</name>
           <description/>
-          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
           <elementType>de.unidue.langtech.teaching.pp.type.GoldScore</elementType>
         </featureDescription>
       </features>
@@ -76,7 +76,7 @@
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>score</name>
+          <name>similarity</name>
           <description/>
           <rangeTypeName>uima.cas.Float</rangeTypeName>
         </featureDescription>

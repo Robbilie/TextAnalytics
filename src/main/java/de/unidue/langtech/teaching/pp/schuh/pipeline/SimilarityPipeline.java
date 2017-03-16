@@ -14,7 +14,10 @@ public class SimilarityPipeline {
 	public static void main (String[] args) throws Exception {
 
 		SimplePipeline.runPipeline(
-			CollectionReaderFactory.createReader(Reader.class, Reader.PARAM_INPUT_FILE, "src/test/resources/data/STS.input.MSRvid.txt"),
+			CollectionReaderFactory.createReader(
+					Reader.class, 
+					Reader.PARAM_SENTENCE_INPUT_FILE, "src/test/resources/data/STS.input.MSRvid.txt", 
+					Reader.PARAM_SCORE_INPUT_FILE, "src/test/resources/data/STS.gs.MSRvid.txt"),
 			AnalysisEngineFactory.createEngineDescription(CasDumpWriter.class)
 		);
 

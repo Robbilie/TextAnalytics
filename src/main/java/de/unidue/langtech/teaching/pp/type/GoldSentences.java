@@ -7,12 +7,13 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
+import org.apache.uima.jcas.cas.FSList;
 import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Thu Mar 16 22:07:23 CET 2017
+ * Updated by JCasGen Thu Mar 16 22:38:57 CET 2017
  * XML source: /home/rschuh/projects/TextAnalytics/src/main/resources/desc/type/GoldSentences.xml
  * @generated */
 public class GoldSentences extends Annotation {
@@ -172,41 +173,19 @@ public class GoldSentences extends Annotation {
    * @generated
    * @return value of the feature 
    */
-  public FSArray getScores() {
+  public FSList getScores() {
     if (GoldSentences_Type.featOkTst && ((GoldSentences_Type)jcasType).casFeat_scores == null)
       jcasType.jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.type.GoldSentences");
-    return (FSArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((GoldSentences_Type)jcasType).casFeatCode_scores)));}
+    return (FSList)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((GoldSentences_Type)jcasType).casFeatCode_scores)));}
     
   /** setter for scores - sets  
    * @generated
    * @param v value to set into the feature 
    */
-  public void setScores(FSArray v) {
+  public void setScores(FSList v) {
     if (GoldSentences_Type.featOkTst && ((GoldSentences_Type)jcasType).casFeat_scores == null)
       jcasType.jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     jcasType.ll_cas.ll_setRefValue(addr, ((GoldSentences_Type)jcasType).casFeatCode_scores, jcasType.ll_cas.ll_getFSRef(v));}    
-    
-  /** indexed getter for scores - gets an indexed value - 
-   * @generated
-   * @param i index in the array to get
-   * @return value of the element at index i 
-   */
-  public GoldScore getScores(int i) {
-    if (GoldSentences_Type.featOkTst && ((GoldSentences_Type)jcasType).casFeat_scores == null)
-      jcasType.jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.type.GoldSentences");
-    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((GoldSentences_Type)jcasType).casFeatCode_scores), i);
-    return (GoldScore)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((GoldSentences_Type)jcasType).casFeatCode_scores), i)));}
-
-  /** indexed setter for scores - sets an indexed value - 
-   * @generated
-   * @param i index in the array to set
-   * @param v value to set into the array 
-   */
-  public void setScores(int i, GoldScore v) { 
-    if (GoldSentences_Type.featOkTst && ((GoldSentences_Type)jcasType).casFeat_scores == null)
-      jcasType.jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.type.GoldSentences");
-    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((GoldSentences_Type)jcasType).casFeatCode_scores), i);
-    jcasType.ll_cas.ll_setRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((GoldSentences_Type)jcasType).casFeatCode_scores), i, jcasType.ll_cas.ll_getFSRef(v));}
   }
 
     

@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Thu Mar 16 22:07:23 CET 2017
+ * Updated by JCasGen Thu Mar 16 22:38:57 CET 2017
  * XML source: /home/rschuh/projects/TextAnalytics/src/main/resources/desc/type/GoldSentences.xml
  * @generated */
 public class GoldScore extends Annotation {
@@ -99,25 +99,25 @@ public class GoldScore extends Annotation {
    
     
   //*--------------*
-  //* Feature: score
+  //* Feature: similarity
 
-  /** getter for score - gets 
+  /** getter for similarity - gets 
    * @generated
    * @return value of the feature 
    */
-  public float getScore() {
-    if (GoldScore_Type.featOkTst && ((GoldScore_Type)jcasType).casFeat_score == null)
-      jcasType.jcas.throwFeatMissing("score", "de.unidue.langtech.teaching.pp.type.GoldScore");
-    return jcasType.ll_cas.ll_getFloatValue(addr, ((GoldScore_Type)jcasType).casFeatCode_score);}
+  public float getSimilarity() {
+    if (GoldScore_Type.featOkTst && ((GoldScore_Type)jcasType).casFeat_similarity == null)
+      jcasType.jcas.throwFeatMissing("similarity", "de.unidue.langtech.teaching.pp.type.GoldScore");
+    return jcasType.ll_cas.ll_getFloatValue(addr, ((GoldScore_Type)jcasType).casFeatCode_similarity);}
     
-  /** setter for score - sets  
+  /** setter for similarity - sets  
    * @generated
    * @param v value to set into the feature 
    */
-  public void setScore(float v) {
-    if (GoldScore_Type.featOkTst && ((GoldScore_Type)jcasType).casFeat_score == null)
-      jcasType.jcas.throwFeatMissing("score", "de.unidue.langtech.teaching.pp.type.GoldScore");
-    jcasType.ll_cas.ll_setFloatValue(addr, ((GoldScore_Type)jcasType).casFeatCode_score, v);}    
+  public void setSimilarity(float v) {
+    if (GoldScore_Type.featOkTst && ((GoldScore_Type)jcasType).casFeat_similarity == null)
+      jcasType.jcas.throwFeatMissing("similarity", "de.unidue.langtech.teaching.pp.type.GoldScore");
+    jcasType.ll_cas.ll_setFloatValue(addr, ((GoldScore_Type)jcasType).casFeatCode_similarity, v);}    
   }
 
     
