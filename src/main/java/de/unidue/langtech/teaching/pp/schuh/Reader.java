@@ -53,7 +53,10 @@ public class Reader extends JCasCollectionReader_ImplBase {
 
 	@Override
 	public void getNext(JCas jCas) throws IOException, CollectionException {
-		String[] sentences = sentenceLines.get(currentLine).split("\\t");
+		String[] sentences = sentenceLines.get(currentLine)
+				.toLowerCase()
+				.replaceAll("\\.|,", "")
+				.split("\\t");
 		Float score = Float.parseFloat(scoreLines.get(currentLine));
 		
 		GoldSentences gSentences = new GoldSentences(jCas);
