@@ -73,8 +73,8 @@ public class Reader extends JCasCollectionReader_ImplBase {
 		
 			GoldSentence gSecondSentence = new GoldSentence(jCas);
 				gSecondSentence.setSentence(sentences[1]);
-				gSecondSentence.setLength(sentences[0].length());
-				String[] secondWords = sentences[0].split(" ");
+				gSecondSentence.setLength(sentences[1].length());
+				String[] secondWords = sentences[1].split(" ");
 				StringArray gSecondWords = new StringArray(jCas, secondWords.length);
 					gSecondWords.copyFromArray(secondWords, 0, 0, secondWords.length);
 				gSecondSentence.setWords(gSecondWords);
