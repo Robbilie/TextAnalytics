@@ -6,7 +6,7 @@
   <vendor/>
   <types>
     <typeDescription>
-      <name>de.unidue.langtech.teaching.pp.schuh.type.GoldSentences</name>
+      <name>de.unidue.langtech.teaching.pp.type.GoldSentences</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>

@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Thu Mar 16 22:03:08 CET 2017
+ * Updated by JCasGen Thu Mar 16 22:07:23 CET 2017
  * @generated */
 public class GoldSentence_Type extends Annotation_Type {
   /** @generated */
@@ -103,7 +103,7 @@ public class GoldSentence_Type extends Annotation_Type {
     if (lowLevelTypeChecks)
       return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_words), i, true);
     jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_words), i);
-	return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_words), i);
+  return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_words), i);
   }
    
   /** @generated

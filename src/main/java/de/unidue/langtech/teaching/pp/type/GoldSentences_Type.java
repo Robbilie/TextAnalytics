@@ -1,6 +1,6 @@
 
-/* First created by JCasGen Thu Mar 16 22:03:08 CET 2017 */
-package de.unidue.langtech.teaching.pp.schuh.type;
+/* First created by JCasGen Thu Mar 16 22:07:23 CET 2017 */
+package de.unidue.langtech.teaching.pp.type;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Thu Mar 16 22:03:08 CET 2017
+ * Updated by JCasGen Thu Mar 16 22:07:23 CET 2017
  * @generated */
 public class GoldSentences_Type extends Annotation_Type {
   /** @generated */
@@ -20,7 +20,7 @@ public class GoldSentences_Type extends Annotation_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("de.unidue.langtech.teaching.pp.type.GoldSentences");
  
   /** @generated */
   final Feature casFeat_id;
@@ -32,7 +32,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */ 
   public int getId(int addr) {
         if (featOkTst && casFeat_id == null)
-      jcas.throwFeatMissing("id", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("id", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     return ll_cas.ll_getIntValue(addr, casFeatCode_id);
   }
   /** @generated
@@ -41,7 +41,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */    
   public void setId(int addr, int v) {
         if (featOkTst && casFeat_id == null)
-      jcas.throwFeatMissing("id", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("id", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     ll_cas.ll_setIntValue(addr, casFeatCode_id, v);}
     
   
@@ -56,7 +56,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */ 
   public int getFirstSentence(int addr) {
         if (featOkTst && casFeat_firstSentence == null)
-      jcas.throwFeatMissing("firstSentence", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("firstSentence", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     return ll_cas.ll_getRefValue(addr, casFeatCode_firstSentence);
   }
   /** @generated
@@ -65,7 +65,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */    
   public void setFirstSentence(int addr, int v) {
         if (featOkTst && casFeat_firstSentence == null)
-      jcas.throwFeatMissing("firstSentence", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("firstSentence", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     ll_cas.ll_setRefValue(addr, casFeatCode_firstSentence, v);}
     
   
@@ -80,7 +80,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */ 
   public int getSecondSentence(int addr) {
         if (featOkTst && casFeat_secondSentence == null)
-      jcas.throwFeatMissing("secondSentence", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("secondSentence", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     return ll_cas.ll_getRefValue(addr, casFeatCode_secondSentence);
   }
   /** @generated
@@ -89,7 +89,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */    
   public void setSecondSentence(int addr, int v) {
         if (featOkTst && casFeat_secondSentence == null)
-      jcas.throwFeatMissing("secondSentence", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("secondSentence", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     ll_cas.ll_setRefValue(addr, casFeatCode_secondSentence, v);}
     
   
@@ -104,7 +104,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */ 
   public float getSimilarity(int addr) {
         if (featOkTst && casFeat_similarity == null)
-      jcas.throwFeatMissing("similarity", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("similarity", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     return ll_cas.ll_getFloatValue(addr, casFeatCode_similarity);
   }
   /** @generated
@@ -113,7 +113,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */    
   public void setSimilarity(int addr, float v) {
         if (featOkTst && casFeat_similarity == null)
-      jcas.throwFeatMissing("similarity", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("similarity", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     ll_cas.ll_setFloatValue(addr, casFeatCode_similarity, v);}
     
   
@@ -128,7 +128,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */ 
   public int getScores(int addr) {
         if (featOkTst && casFeat_scores == null)
-      jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     return ll_cas.ll_getRefValue(addr, casFeatCode_scores);
   }
   /** @generated
@@ -137,7 +137,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */    
   public void setScores(int addr, int v) {
         if (featOkTst && casFeat_scores == null)
-      jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     ll_cas.ll_setRefValue(addr, casFeatCode_scores, v);}
     
    /** @generated
@@ -147,7 +147,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */
   public int getScores(int addr, int i) {
         if (featOkTst && casFeat_scores == null)
-      jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     if (lowLevelTypeChecks)
       return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_scores), i, true);
     jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_scores), i);
@@ -161,7 +161,7 @@ public class GoldSentences_Type extends Annotation_Type {
    */ 
   public void setScores(int addr, int i, int v) {
         if (featOkTst && casFeat_scores == null)
-      jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.schuh.type.GoldSentences");
+      jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     if (lowLevelTypeChecks)
       ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_scores), i, v, true);
     jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_scores), i);

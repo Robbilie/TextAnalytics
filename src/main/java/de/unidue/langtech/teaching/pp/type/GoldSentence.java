@@ -12,7 +12,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Thu Mar 16 22:03:08 CET 2017
+ * Updated by JCasGen Thu Mar 16 22:07:23 CET 2017
  * XML source: /home/rschuh/projects/TextAnalytics/src/main/resources/desc/type/GoldSentences.xml
  * @generated */
 public class GoldSentence extends Annotation {
