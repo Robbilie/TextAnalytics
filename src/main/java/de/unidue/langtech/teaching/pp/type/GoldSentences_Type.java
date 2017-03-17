@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Fri Mar 17 00:29:22 CET 2017
+ * Updated by JCasGen Fri Mar 17 01:57:29 CET 2017
  * @generated */
 public class GoldSentences_Type extends Annotation_Type {
   /** @generated */
@@ -140,7 +140,34 @@ public class GoldSentences_Type extends Annotation_Type {
       jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.type.GoldSentences");
     ll_cas.ll_setRefValue(addr, casFeatCode_scores, v);}
     
-  
+   /** @generated
+   * @param addr low level Feature Structure reference
+   * @param i index of item in the array
+   * @return value at index i in the array 
+   */
+  public int getScores(int addr, int i) {
+        if (featOkTst && casFeat_scores == null)
+      jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.type.GoldSentences");
+    if (lowLevelTypeChecks)
+      return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_scores), i, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_scores), i);
+  return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_scores), i);
+  }
+   
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param i index of item in the array
+   * @param v value to set
+   */ 
+  public void setScores(int addr, int i, int v) {
+        if (featOkTst && casFeat_scores == null)
+      jcas.throwFeatMissing("scores", "de.unidue.langtech.teaching.pp.type.GoldSentences");
+    if (lowLevelTypeChecks)
+      ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_scores), i, v, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_scores), i);
+    ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_scores), i, v);
+  }
+ 
 
 
 
@@ -170,7 +197,7 @@ public class GoldSentences_Type extends Annotation_Type {
     casFeatCode_similarity  = (null == casFeat_similarity) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_similarity).getCode();
 
  
-    casFeat_scores = jcas.getRequiredFeatureDE(casType, "scores", "uima.cas.FSList", featOkTst);
+    casFeat_scores = jcas.getRequiredFeatureDE(casType, "scores", "uima.cas.FSArray", featOkTst);
     casFeatCode_scores  = (null == casFeat_scores) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_scores).getCode();
 
   }

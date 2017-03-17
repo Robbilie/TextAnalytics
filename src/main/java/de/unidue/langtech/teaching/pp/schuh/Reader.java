@@ -6,7 +6,7 @@ import org.apache.uima.collection.CollectionException;
 import org.apache.uima.fit.component.JCasCollectionReader_ImplBase;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.cas.FSList;
+import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.jcas.cas.StringArray;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Progress;
@@ -42,12 +42,13 @@ public class Reader extends JCasCollectionReader_ImplBase {
 	public void initialize (UimaContext context) throws ResourceInitializationException {
 		super.initialize(context);
 
+		currentLine = 0;
 		try {
-			currentLine = 0;
 			sentenceLines = FileUtils.readLines(sentenceInputFile);
 			scoreLines = FileUtils.readLines(scoreInputFile);
 		} catch (IOException e) {
-			throw new ResourceInitializationException(e);
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -62,7 +63,8 @@ public class Reader extends JCasCollectionReader_ImplBase {
 		GoldSentences gSentences = new GoldSentences(jCas);
 			gSentences.setId(currentLine);
 			gSentences.setSimilarity(score);
-			gSentences.setScores(new FSList(jCas));
+			//gSentences.setScores(new NonEmptyFSList(jCas));
+			gSentences.setScores(new FSArray(jCas, 0));
 
 			GoldSentence gFirstSentence = new GoldSentence(jCas);
 				gFirstSentence.setSentence(sentences[0]);

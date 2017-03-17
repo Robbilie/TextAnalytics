@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Fri Mar 17 00:29:22 CET 2017
+ * Updated by JCasGen Fri Mar 17 01:57:29 CET 2017
  * @generated */
 public class GoldSentence_Type extends Annotation_Type {
   /** @generated */

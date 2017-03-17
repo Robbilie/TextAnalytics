@@ -2,6 +2,8 @@ package de.unidue.langtech.teaching.pp.schuh;
 
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
@@ -11,6 +13,7 @@ import org.apache.uima.fit.component.CasDumpWriter;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.resource.ResourceInitializationException;
 
+import de.unidue.langtech.teaching.pp.type.GoldScore;
 import de.unidue.langtech.teaching.pp.type.GoldSentences;
 
 public class SimilarityDumper extends CasDumpWriter {
@@ -38,7 +41,18 @@ public class SimilarityDumper extends CasDumpWriter {
 	public void process(CAS aCAS) throws AnalysisEngineProcessException {
 		try {
 			GoldSentences gs = JCasUtil.selectSingle(aCAS.getJCas(), GoldSentences.class);
-			out.println("|\t" + gs.getId() + "\t|\t" + gs.getSimilarity() + "\t|");
+			out.println(
+				"|\t" + 
+				gs.getId() + 
+				"\t|\t" + 
+				gs.getSimilarity() + 
+				"\t|\t" + 
+				Arrays
+					.asList(gs.getScores().toArray())
+					.stream()
+					.map(s -> ((GoldScore)s).getSimilarity() + "")
+					.collect(Collectors.joining("\t|\t")) + 
+				"\t|");
 		    out.flush();
 		} catch (CASException e) {
 			// TODO Auto-generated catch block
