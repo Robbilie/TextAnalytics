@@ -45,6 +45,18 @@ public class SimilarityPipeline {
             		"Random",
             		ComparatorStage.PARAM_COMPARATOR_CLASS, 
             		RandomSentenceComparator.class),
+            AnalysisEngineFactory.createEngineDescription(
+            		ComparatorStage.class, 
+            		ComparatorStage.PARAM_COMPARATOR_NAME,
+            		"Length",
+            		ComparatorStage.PARAM_COMPARATOR_CLASS, 
+            		LengthSentenceComparator.class),
+            AnalysisEngineFactory.createEngineDescription(
+            		ComparatorStage.class, 
+            		ComparatorStage.PARAM_COMPARATOR_NAME,
+            		"Substr",
+            		ComparatorStage.PARAM_COMPARATOR_CLASS, 
+            		SubstringSentenceComparator.class),
 			AnalysisEngineFactory.createEngineDescription(SimilarityDumper.class)
 		);
 

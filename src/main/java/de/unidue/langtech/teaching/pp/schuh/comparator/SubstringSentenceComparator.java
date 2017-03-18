@@ -4,8 +4,7 @@ public class SubstringSentenceComparator extends AbstractSentenceComparator {
 
 	@Override
 	public float compare() {
-		// TODO Auto-generated method stub
-		return 0;
+		return g1.getSentence().contains(g2.getSentence()) || g2.getSentence().contains(g1.getSentence()) ? 5f : 0f;
 	}
 
 }

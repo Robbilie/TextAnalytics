@@ -4,8 +4,7 @@ public class LengthSentenceComparator extends AbstractSentenceComparator {
 
 	@Override
 	public float compare() {
-		// TODO Auto-generated method stub
-		return 0;
+		return g1.getLength() == g2.getLength() ? 5f : 0f;
 	}
 
 }

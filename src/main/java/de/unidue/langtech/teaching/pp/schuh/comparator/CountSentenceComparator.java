@@ -4,8 +4,7 @@ public class CountSentenceComparator extends AbstractSentenceComparator {
 
 	@Override
 	public float compare() {
-		// TODO Auto-generated method stub
-		return 0;
+		return g1.getWordCount() == g2.getWordCount() ? 5f : 0f;
 	}
 
 }

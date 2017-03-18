@@ -4,8 +4,7 @@ public class ExactSentenceComparator extends AbstractSentenceComparator {
 
 	@Override
 	public float compare() {
-		// TODO Auto-generated method stub
-		return 0;
+		return g1.getSentence().equals(g2.getSentence()) ? 5f : 0f;
 	}
 
 }
