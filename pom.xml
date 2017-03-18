@@ -73,6 +73,10 @@
   			<type>pom</type>
   			<scope>import</scope>
   		</dependency>
+	    <dependency>
+	      <groupId>uk.ac.shef.wit.simmetrics</groupId>
+	      <artifactId>simmetrics</artifactId>
+	    </dependency>
   	</dependencies>
   </dependencyManagement>
   <dependencies>
