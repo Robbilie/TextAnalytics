@@ -63,7 +63,6 @@ public class Reader extends JCasCollectionReader_ImplBase {
 		GoldSentences gSentences = new GoldSentences(jCas);
 			gSentences.setId(currentLine);
 			gSentences.setSimilarity(score);
-			//gSentences.setScores(new NonEmptyFSList(jCas));
 			gSentences.setScores(new FSArray(jCas, 0));
 
 			GoldSentence gFirstSentence = new GoldSentence(jCas);

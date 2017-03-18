@@ -3,7 +3,7 @@ package de.unidue.langtech.teaching.pp.schuh.pipeline;
 import de.unidue.langtech.teaching.pp.schuh.Reader;
 import de.unidue.langtech.teaching.pp.schuh.ComparatorStage;
 import de.unidue.langtech.teaching.pp.schuh.SimilarityDumper;
-import de.unidue.langtech.teaching.pp.schuh.comparator.SentenceComparator;
+import de.unidue.langtech.teaching.pp.schuh.comparator.*;
 
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.CollectionReaderFactory;
@@ -24,9 +24,27 @@ public class SimilarityPipeline {
             AnalysisEngineFactory.createEngineDescription(
             		ComparatorStage.class, 
             		ComparatorStage.PARAM_COMPARATOR_NAME,
-            		"Base",
+            		"Min",
             		ComparatorStage.PARAM_COMPARATOR_CLASS, 
-            		SentenceComparator.class),
+            		MinSentenceComparator.class),
+            AnalysisEngineFactory.createEngineDescription(
+            		ComparatorStage.class, 
+            		ComparatorStage.PARAM_COMPARATOR_NAME,
+            		"Max",
+            		ComparatorStage.PARAM_COMPARATOR_CLASS, 
+            		MaxSentenceComparator.class),
+            AnalysisEngineFactory.createEngineDescription(
+            		ComparatorStage.class, 
+            		ComparatorStage.PARAM_COMPARATOR_NAME,
+            		"Half",
+            		ComparatorStage.PARAM_COMPARATOR_CLASS, 
+            		HalfSentenceComparator.class),
+            AnalysisEngineFactory.createEngineDescription(
+            		ComparatorStage.class, 
+            		ComparatorStage.PARAM_COMPARATOR_NAME,
+            		"Random",
+            		ComparatorStage.PARAM_COMPARATOR_CLASS, 
+            		RandomSentenceComparator.class),
 			AnalysisEngineFactory.createEngineDescription(SimilarityDumper.class)
 		);
 
