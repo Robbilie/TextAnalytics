@@ -6,14 +6,9 @@ import org.apache.uima.collection.CollectionException;
 import org.apache.uima.fit.component.JCasCollectionReader_ImplBase;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.cas.FSArray;
-import org.apache.uima.jcas.cas.StringArray;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Progress;
 import org.apache.uima.util.ProgressImpl;
-
-import de.unidue.langtech.teaching.pp.type.GoldSentence;
-import de.unidue.langtech.teaching.pp.type.GoldSentences;
 
 import java.io.File;
 import java.io.IOException;
@@ -47,21 +42,13 @@ public class Reader extends JCasCollectionReader_ImplBase {
 			sentenceLines = FileUtils.readLines(sentenceInputFile);
 			scoreLines = FileUtils.readLines(scoreInputFile);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	@Override
 	public void getNext(JCas jCas) throws IOException, CollectionException {
-		String[] sentences = sentenceLines.get(currentLine)
-				.toLowerCase()
-				.replaceAll("\\.|,", "")
-				.split("\\t");
-		
-			
 		jCas.setDocumentText(currentLine + "\t" + scoreLines.get(currentLine) + "\t" + sentenceLines.get(currentLine));
-		
         currentLine++;
 	}
 
