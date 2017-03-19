@@ -37,6 +37,18 @@ public class SentenceComparatorTest {
 		AbstractSentenceComparator sc = new MinSentenceComparator();
 			sc.setSentences(gSentences.getFirstSentence(), gSentences.getSecondSentence());
 			
+		assertEquals(0f, sc.compare(), 0f);
+	}
+	
+	@Test
+	public void testExactSentenceComparator() throws UIMAException {
+		JCas aJCas = init("0\t5\ttest\ttest");
+		
+		GoldSentences gSentences = JCasUtil.selectSingle(aJCas, GoldSentences.class);
+		
+		AbstractSentenceComparator sc = new ExactSentenceComparator();
+			sc.setSentences(gSentences.getFirstSentence(), gSentences.getSecondSentence());
+			
 		assertEquals(5f, sc.compare(), 0f);
 	}
 
