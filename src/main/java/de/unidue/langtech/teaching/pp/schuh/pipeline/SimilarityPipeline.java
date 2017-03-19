@@ -72,6 +72,18 @@ public class SimilarityPipeline {
             		"Levenshtein",
             		ComparatorStage.PARAM_COMPARATOR_CLASS, 
             		LevenshteinSentenceComparator.class),
+            AnalysisEngineFactory.createEngineDescription(
+            		ComparatorStage.class, 
+            		ComparatorStage.PARAM_COMPARATOR_NAME,
+            		"Cosine",
+            		ComparatorStage.PARAM_COMPARATOR_CLASS, 
+            		CosineSentenceComparator.class),
+            AnalysisEngineFactory.createEngineDescription(
+            		ComparatorStage.class, 
+            		ComparatorStage.PARAM_COMPARATOR_NAME,
+            		"Euclidean",
+            		ComparatorStage.PARAM_COMPARATOR_CLASS, 
+            		EuclideanSentenceComparator.class),
 			AnalysisEngineFactory.createEngineDescription(SimilarityDumper.class)
 		);
 
