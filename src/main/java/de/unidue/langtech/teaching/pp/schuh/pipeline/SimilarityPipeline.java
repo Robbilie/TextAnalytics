@@ -57,6 +57,12 @@ public class SimilarityPipeline {
             		"Substr",
             		ComparatorStage.PARAM_COMPARATOR_CLASS, 
             		SubstringSentenceComparator.class),
+            AnalysisEngineFactory.createEngineDescription(
+            		ComparatorStage.class, 
+            		ComparatorStage.PARAM_COMPARATOR_NAME,
+            		"Levenshtein",
+            		ComparatorStage.PARAM_COMPARATOR_CLASS, 
+            		LevenshteinSentenceComparator.class),
 			AnalysisEngineFactory.createEngineDescription(SimilarityDumper.class)
 		);
 
