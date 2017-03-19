@@ -57,6 +57,12 @@ public class SimilarityPipeline {
             AnalysisEngineFactory.createEngineDescription(
             		ComparatorStage.class, 
             		ComparatorStage.PARAM_COMPARATOR_NAME,
+            		"Count",
+            		ComparatorStage.PARAM_COMPARATOR_CLASS, 
+            		CountSentenceComparator.class),
+            AnalysisEngineFactory.createEngineDescription(
+            		ComparatorStage.class, 
+            		ComparatorStage.PARAM_COMPARATOR_NAME,
             		"Substr",
             		ComparatorStage.PARAM_COMPARATOR_CLASS, 
             		SubstringSentenceComparator.class),
