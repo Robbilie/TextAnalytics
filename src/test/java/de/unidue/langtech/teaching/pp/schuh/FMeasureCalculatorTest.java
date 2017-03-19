@@ -14,14 +14,14 @@ public class FMeasureCalculatorTest {
 		FMeasureCalculator fmc = new FMeasureCalculator();
 		
 			List<Float> goldValues = new ArrayList<Float>();
-				goldValues.add(0f);
+				goldValues.add(2f);
 			fmc.setGoldValues(goldValues);
 			
 			List<Float> testValues = new ArrayList<Float>();
-				testValues.add(0f);
+				testValues.add(2f);
 			fmc.setTestValues(testValues);
 			
-		assertEquals(fmc.calculateFMeasure(), 0f, 0f);
+		assertEquals(fmc.calculateFMeasure(), 1f, 0f);
 	}
 
 }
