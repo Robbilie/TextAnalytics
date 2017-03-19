@@ -44,10 +44,10 @@ public class SimilarityDumper extends CasDumpWriter {
 				if (calculatedValues.containsKey(gScore.getName()) == false) {
 					calculatedValues.put(gScore.getName(), new ArrayList<Float>());
 				}
-				calculatedValues.get(gScore.getName()).add(gScore.getSimilarity());
+				calculatedValues.get(gScore.getName()).add(gs.getId(), gScore.getSimilarity());
 			});
 		
-			goldValues.add(gs.getSimilarity());
+			goldValues.add(gs.getId(), gs.getSimilarity());
 		} catch (CASException e) {
 			e.printStackTrace();
 		}
