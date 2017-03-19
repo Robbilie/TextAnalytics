@@ -25,24 +25,23 @@ public class ComparatorStage extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
-		GoldSentences gSentence = JCasUtil.selectSingle(aJCas, GoldSentences.class);
+		GoldSentences gSentences = JCasUtil.selectSingle(aJCas, GoldSentences.class);
 			try {
 				AbstractSentenceComparator obj = comparatorClass
 						.getConstructor()
 						.newInstance();
 
-				obj.setSentences(gSentence.getFirstSentence(), gSentence.getSecondSentence());
-				FSArray scores = gSentence.getScores();
+				obj.setSentences(gSentences.getFirstSentence(), gSentences.getSecondSentence());
+				FSArray scores = gSentences.getScores();
 				GoldScore gScore = new GoldScore(aJCas);
 					gScore.setName(comparatorName);
 					gScore.setSimilarity(obj.compare());
 				FSArray newScores = new FSArray(aJCas, scores.size() + 1);
 					newScores.copyFromArray(scores.toArray(), 0, 0, scores.size());
 					newScores.set(scores.size(), gScore);
-				gSentence.setScores(newScores);
+				gSentences.setScores(newScores);
 			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException
 					| InvocationTargetException | NoSuchMethodException | SecurityException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
