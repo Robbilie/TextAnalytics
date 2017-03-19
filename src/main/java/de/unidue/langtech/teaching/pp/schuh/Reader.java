@@ -58,36 +58,9 @@ public class Reader extends JCasCollectionReader_ImplBase {
 				.toLowerCase()
 				.replaceAll("\\.|,", "")
 				.split("\\t");
-		Float score = Float.parseFloat(scoreLines.get(currentLine));
 		
-		GoldSentences gSentences = new GoldSentences(jCas);
-			gSentences.setId(currentLine);
-			gSentences.setSimilarity(score);
-			gSentences.setScores(new FSArray(jCas, 0));
-
-			GoldSentence gFirstSentence = new GoldSentence(jCas);
-				gFirstSentence.setSentence(sentences[0]);
-				gFirstSentence.setLength(sentences[0].length());
-				String[] firstWords = sentences[0].split(" ");
-				StringArray gFirstWords = new StringArray(jCas, firstWords.length);
-					gFirstWords.copyFromArray(firstWords, 0, 0, firstWords.length);
-				gFirstSentence.setWords(gFirstWords);
-				gFirstSentence.setWordCount(firstWords.length);
-			gSentences.setFirstSentence(gFirstSentence);
-		
-			GoldSentence gSecondSentence = new GoldSentence(jCas);
-				gSecondSentence.setSentence(sentences[1]);
-				gSecondSentence.setLength(sentences[1].length());
-				String[] secondWords = sentences[1].split(" ");
-				StringArray gSecondWords = new StringArray(jCas, secondWords.length);
-					gSecondWords.copyFromArray(secondWords, 0, 0, secondWords.length);
-				gSecondSentence.setWords(gSecondWords);
-				gSecondSentence.setWordCount(secondWords.length);
-			gSentences.setSecondSentence(gSecondSentence);
 			
-			gSentences.addToIndexes();
-			
-		jCas.setDocumentText(sentenceLines.get(currentLine));
+		jCas.setDocumentText(currentLine + "\t" + scoreLines.get(currentLine) + "\t" + sentenceLines.get(currentLine));
 		
         currentLine++;
 	}
