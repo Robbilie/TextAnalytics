@@ -25,16 +25,11 @@ public class SimilarityDumper extends CasDumpWriter {
 	@Override
     public void initialize(UimaContext context) throws ResourceInitializationException {
         super.initialize(context);
-        Field f;
 		try {
-			f = CasDumpWriter.class.getDeclaredField("out");
-        	f.setAccessible(true);
+			Field f = CasDumpWriter.class.getDeclaredField("out");
+        		f.setAccessible(true);
         	out = (PrintWriter)f.get(this);
-        	/*out.println("+\t\t+\t\t+");
-        	out.println("|\tID\t|\tSimil.\t|");
-        	out.println("+\t\t+\t\t+");*/
 		} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -53,24 +48,7 @@ public class SimilarityDumper extends CasDumpWriter {
 			});
 		
 			goldValues.add(gs.getSimilarity());
-			
-			/*
-			out.println(
-				"|\t" + 
-				gs.getId() + 
-				"\t|\t" + 
-				gs.getSimilarity() + 
-				"\t|\t" + 
-				Arrays
-					.asList(gs.getScores().toArray())
-					.stream()
-					.map(s -> ((GoldScore)s).getSimilarity() + "")
-					.collect(Collectors.joining("\t|\t")) + 
-				"\t|");
-		    out.flush();
-		    */
 		} catch (CASException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
