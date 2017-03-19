@@ -26,7 +26,7 @@ public class Reader extends JCasCollectionReader_ImplBase {
 	
 	// Score Input File Path Name
 	public static final String PARAM_SCORE_INPUT_FILE = "ScoreInputFile";
-	@ConfigurationParameter(name = PARAM_SCORE_INPUT_FILE)
+	@ConfigurationParameter(name = PARAM_SCORE_INPUT_FILE, mandatory = false, defaultValue = "-")
 	private File scoreInputFile;
 
 	private List<String> sentenceLines;
@@ -40,7 +40,8 @@ public class Reader extends JCasCollectionReader_ImplBase {
 		currentLine = 0;
 		try {
 			sentenceLines = FileUtils.readLines(sentenceInputFile);
-			scoreLines = FileUtils.readLines(scoreInputFile);
+			if (scoreInputFile.toString().equals("-") == false)
+				scoreLines = FileUtils.readLines(scoreInputFile);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -48,7 +49,7 @@ public class Reader extends JCasCollectionReader_ImplBase {
 
 	@Override
 	public void getNext(JCas jCas) throws IOException, CollectionException {
-		jCas.setDocumentText(currentLine + "\t" + scoreLines.get(currentLine) + "\t" + sentenceLines.get(currentLine));
+		jCas.setDocumentText(currentLine + "\t" + (scoreLines != null ? scoreLines.get(currentLine) + "\t" : "") + sentenceLines.get(currentLine));
         currentLine++;
 	}
 
