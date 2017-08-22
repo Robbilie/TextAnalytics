@@ -14,36 +14,27 @@ public class SentenceExtractor extends JCasAnnotator_ImplBase {
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		String[] parts = aJCas.getDocumentText().toLowerCase().split("\\t");
-
-		String sentence1 = parts[2].replaceAll("[^a-z0-9\\ ]", "");
-		String sentence2 = parts[3].replaceAll("[^a-z0-9\\ ]", "");
 		
 		GoldSentences gSentences = new GoldSentences(aJCas);
 			gSentences.setId(Integer.parseInt(parts[0]));
 			gSentences.setSimilarity(Float.parseFloat(parts[1]));
 			gSentences.setScores(new FSArray(aJCas, 0));
-
-			GoldSentence gFirstSentence = new GoldSentence(aJCas);
-				gFirstSentence.setSentence(sentence1);
-				gFirstSentence.setLength(sentence1.length());
-				String[] firstWords = sentence1.split(" ");
-				StringArray gFirstWords = new StringArray(aJCas, firstWords.length);
-					gFirstWords.copyFromArray(firstWords, 0, 0, firstWords.length);
-				gFirstSentence.setWords(gFirstWords);
-				gFirstSentence.setWordCount(firstWords.length);
-			gSentences.setFirstSentence(gFirstSentence);
-		
-			GoldSentence gSecondSentence = new GoldSentence(aJCas);
-				gSecondSentence.setSentence(sentence2);
-				gSecondSentence.setLength(sentence2.length());
-				String[] secondWords = sentence2.split(" ");
-				StringArray gSecondWords = new StringArray(aJCas, secondWords.length);
-					gSecondWords.copyFromArray(secondWords, 0, 0, secondWords.length);
-				gSecondSentence.setWords(gSecondWords);
-				gSecondSentence.setWordCount(secondWords.length);
-			gSentences.setSecondSentence(gSecondSentence);
-			
+			gSentences.setFirstSentence(this.processSentence(aJCas, parts[2]));
+			gSentences.setSecondSentence(this.processSentence(aJCas, parts[3]));
 			gSentences.addToIndexes();
+	}
+
+	public GoldSentence processSentence(JCas aJCas, String rawSentence) {
+		String sentence = rawSentence.replaceAll("[^a-z0-9\\ ]", "");
+		GoldSentence gSentence = new GoldSentence(aJCas);
+			gSentence.setSentence(sentence);
+			gSentence.setLength(sentence.length());
+			String[] words = sentence.split(" ");
+			StringArray gWords = new StringArray(aJCas, words.length);
+				gWords.copyFromArray(words,0, 0, words.length);
+			gSentence.setWords(gWords);
+			gSentence.setWordCount(words.length);
+		return gSentence;
 	}
 
 }
